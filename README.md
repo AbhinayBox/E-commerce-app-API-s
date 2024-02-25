@@ -41,23 +41,25 @@ Following are the different tables to be made in the database along with attribu
 
 Following is the API doc:
 
-INFORMATION RELATED TO EACH API ENDPOINT: 1)app.post/register: ->This particular endpoint is used to register the user. This particular endpoint will require you to input an username and password. If any error occurs during the registration procedure,it will send a status code of 500 and a message of “Internal server error”. If registration occurs successfully,it will send a status code of 200 and a message of “User registered successfully”.
+INFORMATION RELATED TO EACH API ENDPOINT: 
 
-app.post/login: ->This endpoint is used to login the user.It requires to input the username and password. If there is an error occurring in the login procedure,it sends a response code of 500 and a message of “Internal server error”. If a user enters an invalid username or password ,it sends a status code of 401 with a message of “Invalid username or password”. If the username and password is correct,it sends a status code of 200 along with a jwt token.
+1)app.post/register: ->This particular endpoint is used to register the user. This particular endpoint will require you to input an username and password. If any error occurs during the registration procedure,it will send a status code of 500 and a message of “Internal server error”. If registration occurs successfully,it will send a status code of 200 and a message of “User registered successfully”.
 
-app.get/categories: ->If any error occurs,it sends a status code of 500 and a message of “internal server error”.In case of no errors,it displays the categories along with other information from the database with a status code of 200.
+2)app.post/login: ->This endpoint is used to login the user.It requires to input the username and password. If there is an error occurring in the login procedure,it sends a response code of 500 and a message of “Internal server error”. If a user enters an invalid username or password ,it sends a status code of 401 with a message of “Invalid username or password”. If the username and password is correct,it sends a status code of 200 along with a jwt token.
 
-app.get/products: ->If case of any error it sends a status code of 500 and displays “internal server error” .It requires to input the categoryID and in output,it displays a list of products belonging to that categoryID and also sends a status code of 200.
+3)app.get/categories: ->If any error occurs,it sends a status code of 500 and a message of “internal server error”.In case of no errors,it displays the categories along with other information from the database with a status code of 200.
 
-app.get/products/:id : ->It requires to send a productId as input .If any error occurs ,it sends a status code of 500 and “internal server error” else it displays the details of products belonging to that particular id.If any invalid id is sent,it sends a message of “product not found” with a status code of 404.
+4)app.get/products: ->If case of any error it sends a status code of 500 and displays “internal server error” .It requires to input the categoryID and in output,it displays a list of products belonging to that categoryID and also sends a status code of 200.
 
-app.post/cart/add: ->It requires userID,productID,and the quantity of product to be sent and if any error occurs ,it performs the same previous task else it adds a particular product to the user’s cart along with the quantity of that product and increases the products’ respective quantity .
+5)app.get/products/:id : ->It requires to send a productId as input .If any error occurs ,it sends a status code of 500 and “internal server error” else it displays the details of products belonging to that particular id.If any invalid id is sent,it sends a message of “product not found” with a status code of 404.
 
-app.get/cart: ->It requires to send the users’ Id and it sends the information of the products of that particular user along with the information of each of those products.
+6)app.post/cart/add: ->It requires userID,productID,and the quantity of product to be sent and if any error occurs ,it performs the same previous task else it adds a particular product to the user’s cart along with the quantity of that product and increases the products’ respective quantity .
 
-app.put/cart/:productId : ->It requires the userID,productID,quantity of the product to be sent and thenit updates the new quantity of that particular product of that particular user.
+7)app.get/cart: ->It requires to send the users’ Id and it sends the information of the products of that particular user along with the information of each of those products.
 
-app.delete/cart/:productId : ->It requires to send userID and a productID and the particular product sent by the particular user gets deleted from its cart .
+8)app.put/cart/:productId : ->It requires the userID,productID,quantity of the product to be sent and thenit updates the new quantity of that particular product of that particular user.
+
+9)app.delete/cart/:productId : ->It requires to send userID and a productID and the particular product sent by the particular user gets deleted from its cart .
 
 10)app.post /order/place: ->It requires the userID and product to be sent and it places those products in the cart of the particular user along with the calculation of the price of that product and the date of placing of order of that product.
 
