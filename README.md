@@ -29,7 +29,9 @@ jsonwebtoken mysql bcryptjs dotenv'.This will install the required libraries in 
 
 
 Important design decision made during development is the correct development of database tables and attributes in it.
+
 Following are the different tables to be made in the database along with attributes:
+
 1)Users(user_id,username,password)
 
 2)Categories(category_id,products)
